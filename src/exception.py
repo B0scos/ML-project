@@ -1,0 +1,24 @@
+import sys
+import logging
+import logger
+
+def error_message_detail(message: str, error_detail:sys) -> None:
+    _, _, exc_fb = error_detail.exc_info()
+    file_name = exc_fb.tb_frame.f_code.co_filename
+
+
+    error_message = "Error occurred in script: {0} at line number: {1} with message: {2}".format(
+        file_name, exc_fb.tb_lineno, str(message)
+        
+    )
+    return error_message
+
+class CostumException(Exception):
+    def __init__(self, message: str, error_detail: sys):
+        super().__init__(message)
+        self.message = error_message_detail(message, error_detail)
+    
+    def __str__(self):
+        return self.message
+    
+

@@ -1,0 +1,11 @@
+[2025-12-19 14:17:18,606] INFO - Entered the data ingestion method
+[2025-12-19 14:17:18,608] INFO - Read the dataset as dataframe
+[2025-12-19 14:17:18,613] INFO - Train test split initiated
+[2025-12-19 14:17:18,617] INFO - Ingestion of the data is completed
+[2025-12-19 14:17:18,645] INFO - Read train and test data completed
+[2025-12-19 14:17:18,645] INFO - Obtaining preprocessing object
+[2025-12-19 14:17:18,645] INFO - Categorical and numerical transformation completed
+[2025-12-19 14:17:18,648] INFO - Applying preprocessing object on training and testing dataframes
+[2025-12-19 14:17:18,657] INFO - Saved preprocessing object
+[2025-12-19 14:17:18,667] INFO - Splitting training and test input data
+[2025-12-19 14:17:21,195] INFO - Best model found: Linear Regression with r2 score: 0.8804332983749565

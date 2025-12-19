@@ -35,7 +35,17 @@ class ModelTrainer:
             X_train, y_train = train_array[:, :-1], train_array[:, -1]
             X_test, y_test = test_array[:, :-1], test_array[:, -1]
 
-            
+            models = {
+                "Random Forest": RandomForestRegressor(),   
+                "Decision Tree": DecisionTreeRegressor(),
+                "Gradient Boosting": GradientBoostingRegressor(),
+                "Linear Regression": LinearRegression(),
+                "XGBRegressor": XGBRegressor(),
+                "CatBoosting Regressor": CatBoostRegressor(verbose=False),
+                "AdaBoost Regressor": AdaBoostRegressor(),
+            }
+
+            model_report: dict = evaluate_models(X_train=X_train, y_train=y_train, models=models, X_test=X_test, y_test=y_test)
             
         except Exception as e:
             raise CustomException(e, sys)

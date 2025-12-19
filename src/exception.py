@@ -1,6 +1,5 @@
 import sys
-import logging
-import logger
+from src.logger import logging
 
 def error_message_detail(message: str, error_detail:sys) -> None:
     _, _, exc_fb = error_detail.exc_info()
@@ -21,4 +20,3 @@ class CostumException(Exception):
     def __str__(self):
         return self.message
     
-

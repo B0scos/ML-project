@@ -16,8 +16,9 @@ class DataTransformationConfig:
     def __init__(self):
         self.preprocessor_obj_file_path = os.path.join('artifacts', 'preprocessor.pkl')
 
+
 class DataTransformation:
-    def __int__(self):
+    def __init__(self):
         self.data_transformation_config = DataTransformationConfig()
     
     def get_data_transformer_object(self):
@@ -45,7 +46,6 @@ class DataTransformation:
             cat_pipeline = Pipeline(steps=[
                 ('imputer', SimpleImputer(strategy='most_frequent')),
                 ('one_hot_encoder', OneHotEncoder()),
-                ('scaler', StandardScaler()),
             ])
 
             preprocessor = ColumnTransformer(
